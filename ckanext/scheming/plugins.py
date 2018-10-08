@@ -129,7 +129,6 @@ class _SchemingMixin(object):
             return
         _SchemingMixin._template_dir_added = True
         add_template_directory(config, 'templates')
-        print('\n'.join([x for x in config['extra_template_paths'].split(',')]))
 
     def _load_presets(self, config):
         if _SchemingMixin._presets is not None:
@@ -375,10 +374,7 @@ def _load_schema_module_path(url):
     p = os.path.join(os.path.dirname(inspect.getfile(m)), file_name)
     if os.path.exists(p):
         watch_file(p)
-        print('!!!!UNDO!!!!')
-        import json
-        return json.load(open(p))
-        #return loader.load(open(p))
+        return loader.load(open(p))
 
 
 def _load_schema_url(url):
