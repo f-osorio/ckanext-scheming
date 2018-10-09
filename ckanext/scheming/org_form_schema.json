@@ -27,6 +27,7 @@
         {
           "field_name": "url",
           "label": "Image",
+          "form_snippet": "image_upload.html",
           "form_placeholder": "http://example.com/my-image.jpg"
         },
         {
