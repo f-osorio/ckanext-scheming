@@ -9,9 +9,15 @@
 {%- endif -%}
 
 {%- set module_placeholder = '<' + object_type + '>' -%}
-
 {%- set prefix = h.url_for(object_type + '_read', id='') -%}
 {%- set domain = h.url_for(object_type + '_read', id='', qualified=true) -%}
+
+{% if object_type == 'organization' %}
+    {% set module_placeholder = 'journals' %}
+    {%- set prefix = '<journals>' -%}
+    {%- set domain = domain|replace('organization', 'journals') -%}
+{% endif %}
+
 {%- set domain = domain|replace("http://", "")|replace("https://", "") -%}
 {%- set attrs = {
     'data-module': 'slug-preview-slug',

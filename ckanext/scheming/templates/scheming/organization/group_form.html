@@ -23,7 +23,15 @@
           {% endif %}
         {% endif %}
         {% endblock %}
-        <button class="btn btn-primary" name="save" type="submit">{% block save_text %}{{ _('Save Organization') }}{% endblock %}</button>
+        <button class="btn btn-primary" name="save" type="submit">{% block save_text %}
+            {#{ _('Save Organization') }#}
+            {# can't seem to reach the template in new_organization_form #}
+            {% if action == "edit" %}
+                {{ _('Update Journal') }}
+            {% else %}
+                {{ _('Create Journal') }}
+            {% endif %}
+        {% endblock %}</button>
         {{ form.required_message() }}
     </div>
 </form>

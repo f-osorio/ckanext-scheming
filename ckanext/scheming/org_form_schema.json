@@ -14,9 +14,9 @@
         {
           "field_name": "name",
           "label": "URL",
-          "validators": "not_empty unicode name_validator group_name_validator",
+          "validators":"not_empty unicode name_validator group_name_validator",
           "form_snippet": "slug.html",
-          "form_placeholder": "my-theme"
+          "form_placeholder": "journal-name"
         },
         {
           "field_name": "notes",
@@ -26,7 +26,7 @@
         },
         {
           "field_name": "url",
-          "label": "Image URL",
+          "label": "Image",
           "form_placeholder": "http://example.com/my-image.jpg"
         },
         {
